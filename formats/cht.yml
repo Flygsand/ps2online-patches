@@ -1,0 +1,15 @@
+---
+name: cht
+filename: "{{ id }}.cht"
+template: |-
+  "{{ title }} /ID {{ id }}"
+
+  Enable Code
+  {{ enableCode[:8] }} {{ enableCode[8:] }}
+
+  {% for patch in patches -%}
+  {{ patch.description }}
+  {% for code in patch.codes -%}
+  {{ code[:8] }} {{ code[8:] }}
+  {% endfor %}
+  {% endfor %}

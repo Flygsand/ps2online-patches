@@ -1,0 +1,29 @@
+on: push
+jobs:
+  package:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: "3.10.1"
+        cache: pip
+    - run: pip install -r requirements.txt
+    - run: |
+        for fmt in cht pnach; do
+          mkdir -p out/$fmt
+          ./format.py --format $fmt --crlf --outdir out/$fmt games/*
+          zip -j out/$fmt.zip out/$fmt/*
+        done
+
+        git log --grep="^fix" --grep="^feat" --oneline --no-merges \
+          ${{ github.event.before == '0000000000000000000000000000000000000000' && '4b825dc642cb6eb9a060e54bf8d69288fbee4904' || github.event.before }}..${{ github.event.after }} > CHANGELOG.txt
+    - run: echo "::set-output name=timestamp::$(date -u +'%Y%m%d%H%M%S')"
+      id: timestamp
+    - uses: softprops/action-gh-release@v1
+      if: github.ref == 'refs/heads/master' && hashFiles('CHANGELOG.txt') != 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+      with:
+        body_path: CHANGELOG.txt
+        files: out/*.zip
+        tag_name: ${{ steps.timestamp.outputs.timestamp }}
+        name: ${{ steps.timestamp.outputs.timestamp }}
