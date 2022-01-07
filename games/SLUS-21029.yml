@@ -1,0 +1,12 @@
+---
+id: SLUS_210.29
+crc: "4A0E5B3A"
+title: "Midnight Club 3: DUB Edition"
+enableCode: "905452E80C151462"
+patches:
+- description: Bypass DNAS
+  codes:
+  - "D1D7251400000006"
+  - "01D7250800000000"
+  - "D1D7251400000006"
+  - "01D7251400000005"
