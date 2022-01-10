@@ -3,10 +3,10 @@ name: pnach
 filename: "{{ crc }}.pnach"
 template: |-
   gametitle={{ title }} [{{ id }}]
-  comment=Online patches from https://github.com/kvadevack/ps2online-patches
+  comment=https://github.com/kvadevack/ps2online-patches
 
   {% for patch in patches -%}
-  //{{ patch.description }}
+  // {{ patch.description }}
   {% for code in patch.codes -%}
   patch=1,EE,{{ code[:8] }},extended,{{ code[8:] }}
   {% endfor %}
