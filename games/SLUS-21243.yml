@@ -1,0 +1,31 @@
+---
+id: SLUS_212.43
+crc: "01B2FA7F"
+title: "Metal Gear Solid 3: Subsistence (Disc 2) (Persistence)"
+enableCode: "901836880C07B869"
+patches:
+- description: Bypass DNAS
+  codes:
+  - "C036B1E4AE220040"
+  - "2036B1E824020000"
+  - "2036B1EC03E00008"
+  - "2036B1F000000000"
+- description: Disable HTTPS
+  codes:
+  - "C132241068000000"
+  - "213224143A707474"
+  - "2132241861732F2F"
+  - "2132241C676D6576"
+  - "213224206F632E6F"
+  - "2132242473752F6D"
+  - "2132242873676D2F"
+  - "2132242C00002F33"
+- description: Bypass User Stats Request
+  codes:
+  - "C036B1E4AE220040"
+  - "20193A6000000000"
+- description: Patch Crypto
+  codes:
+  - "C036B1E4AE220040"
+  - "20199F3803E00008"
+  - "20199F3C00000000"
