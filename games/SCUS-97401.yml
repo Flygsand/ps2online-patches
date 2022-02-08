@@ -1,0 +1,10 @@
+---
+id: SCUS_974.01
+crc: "D7F42600"
+title: "Hot Shots Golf Fore!"
+enableCode: "901071900C041C0C"
+patches:
+- description: Bypass DNAS
+  codes:
+  - "D059C17C00000006"
+  - "0059C17C00000005"
