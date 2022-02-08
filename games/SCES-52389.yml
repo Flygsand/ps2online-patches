@@ -1,0 +1,12 @@
+---
+id: SCES_523.89
+crc: "AFD06CBA"
+title: "WRC 4: The Official Game of the FIA World Rally Championship"
+enableCode: "90384DD00C0E131C"
+patches:
+- description: Bypass DNAS
+  codes:
+  - "D1AE06AC00000006"
+  - "01AE06A000000000"
+  - "D1AE06AC00000006"
+  - "01AE06AC00000005"
