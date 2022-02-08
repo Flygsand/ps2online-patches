@@ -1,0 +1,12 @@
+---
+id: SLUS_206.91
+crc: "A6B59CA2"
+title: "NHL Hitz Pro"
+enableCode: "90112F700C044B84"
+patches:
+- description: Bypass DNAS
+  codes:
+  - "D04C9E2400000006"
+  - "004C9E1800000000"
+  - "D04C9E2400000006"
+  - "004C9E2400000005"
